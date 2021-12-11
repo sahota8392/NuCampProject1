@@ -22,12 +22,21 @@
     <!-- Jumbotron:  extra attention to section of page-->
     <header class="jumbotron jumbotron-fluid">
         <div class="container">
-            <div class="row row-content align-items-center">
+            <div class="row">
                 <div class="col-4 col-sm-3 col-md-2 align-self-center">
                     <img src="img/logo.png" class="img-fluid"/>
+                </div>
+                <div class="col">
                     <h1>NuCamp</h1>
                     <h2>a better way to camp</h2>
                 </div>
+
+                <div class="col-md-4 col-xl-2 mt-4">
+                    <a href="#reserveForm">
+                        <button type="button" class="btn btn-info btn-lg text-nowrap" role="button">Reserve Campsite</button>
+                    </a>
+                </div>
+
             </div>
         </div>
     </header>
@@ -52,6 +61,8 @@
     </div>
     </nav>
 
+
+
     <div class="container">
         <div class="row row-content align-items-center">
             <div class="col-sm-4 order-sm-last col-md-3">
@@ -68,14 +79,21 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-4 col-md-3">
+        <div class="row row-content align-items-top">
+            <div class="col-sm-4 order-sm-first col-md-3">
                 <h2>Featured Campsites</h2>
             </div>
             <div class="col">
-                <h3>React Lake Campground</h3>
-        		<p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
-   			</div>
+                        <h3 class="text-sm-left">React Lake Campground</h3>
+        		        <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
+            </div>
+            <div class="col">
+                <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail" src="img/react-lake-thumb.jpg" alt="Lake Campground thumbnail">
+                    <div class="media-body align-self-center">
+                </div>
+                </div>
+            </div>
         </div>
 
         <div class="row row-content align-items-center">
@@ -92,7 +110,49 @@
                 </div>
             </div>
         </div>
+
+        <div class="row row-content">
+            <div class="col col-sm-6 max-auto">
+                <div class="card" style="width: auto;">
+                    <h3 class="card-header bg-info text-white">Reserve a Campsite</h3>
+                    <div class="card-body">
+                    <form id="reserveForm">
+                        <div class="form-group row">
+                            <label for="numCampers" class="col-sm-6 col-form-label" for="numCampers">Number of Campers</label>
+                            <div class="col">
+                                <select class="form-control" name="numCampers" id="numCampers">
+                                    <option value="">Select...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="date" class="col-sm-6 col-form-label">Date</label>
+                            <div class="col">
+                                <input type="date" class="form-control" id="date" name="date" placeholder="Date">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+
 
     <footer class ="site-footer">
         <div class="container">
