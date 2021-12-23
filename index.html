@@ -171,22 +171,22 @@ Replace with one that will active a modal....See below-->
 
 
     <div class="container">
-        <!--Carousel Adding here-->
+<!--Carousel Adding here-->
         <div class="container">
             <div class="row row-content">
                 <div class="col-md-8 mx-auto">
                     <div id="homeCarousel" class="carousel slide" data-ride="carousel">
-                        <!--Adding Carousel indicators-->
+<!--Adding Carousel indicators-->
                         <ol class="carousel-indicators">
                             <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
                             <li data-target="#homeCarousel" data-slide-to="1"></li>
                             <li data-target="#homeCarousel" data-slide-to="2"></li>
                         </ol>
-                        <!--The indicators in the bottom of the image shows from code above-->
+<!--The indicators in the bottom of the image shows from code above-->
                         <div class="carousel-inner">
                             <div class="carousel-item active"> 
-                                <!--least one needs the active or else carousel wont' show.
-                                w-100 class are Bootstrap display and sizing: Image display property to block and image property to 100%-->
+<!--least one needs the active or else carousel wont' show.
+w-100 class are Bootstrap display and sizing: Image display property to block and image property to 100%-->
                                 <img class="d-block w-100" src="img/breadcrumb-trail.jpg" alt="Breadcrumb Trail Campground"/>
                                 <div class="carousel-caption">
                                     <h3>Breadcrumb Trail Campground</h3>
@@ -209,9 +209,9 @@ Replace with one that will active a modal....See below-->
                                     <p class="d-none d-sm-block">Spend a few sunny days and starry nights beneath a canopy of old-growth firs at this enchanting spot by the Chrome River</p>
                                 </div>
                             </div>
-                            <!--adding the basic carousel for slideshow-->
+<!--adding the basic carousel for slideshow-->
                             <div id="homeCarousel" class="carousel slide" data-ride="carousel"></div>
-                            <!--Adding Carosusel Controls-->
+<!--Adding Carosusel Controls-->
                             <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon"></span>
                                 <span class="sr-only">Previous</span>
@@ -220,6 +220,15 @@ Replace with one that will active a modal....See below-->
                                 <span class="carousel-control-next-icon"></span>
                                 <span class="sr-only">Next</span>
                             </a>
+<!--Adding Play/Pause buttons-->
+                            <div class="btn-group" id="carouselButton">
+                                <button class="btn btn-danger btn-sm" id="carouselPause">
+                                    <i class="fa fa-pause"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm" id="carouselPlay">
+                                    <i class="fa fa-play"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -275,7 +284,7 @@ Replace with one that will active a modal....See below-->
 
 <!--Hiding all this as we built the modal above
         <div class="row row-content">
-            <div class="col col-sm-6 max-auto">
+            <div class="col col-sm-6 mx-auto">
                 <div class="card" style="width: auto;">
                     <h3 class="card-header bg-info text-white">Reserve a Campsite</h3>
                     <div class="card-body">
@@ -356,6 +365,19 @@ All above is hidden as we built the modal; no longer will see the form-->
         })
     </script>
 but we are removing this in Week 3 so we can use modal in place-->
+
+<!--Adding Jquery Script for the Play and Pause buttons on carousel-->
+<script>
+    $(function() {
+        $(".carousel").carousel( { interval: 2000 } );
+        $("#carouselPause").click(function(){
+            $(".carousel").carousel("pause");
+        });
+        $("#carouselPlay").click(function(){
+            $(".carousel").carousel("cycle");
+        });
+    });
+</script>
 </body>
 
 </html>
