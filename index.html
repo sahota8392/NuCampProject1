@@ -220,7 +220,7 @@ w-100 class are Bootstrap display and sizing: Image display property to block an
                                 <span class="carousel-control-next-icon"></span>
                                 <span class="sr-only">Next</span>
                             </a>
-<!--Adding Play/Pause buttons-->
+<!--Adding Play/Pause buttons and then removing them for updated versions
                             <div class="btn-group" id="carouselButton">
                                 <button class="btn btn-danger btn-sm" id="carouselPause">
                                     <i class="fa fa-pause"></i>
@@ -229,6 +229,12 @@ w-100 class are Bootstrap display and sizing: Image display property to block an
                                     <i class="fa fa-play"></i>
                                 </button>
                             </div>
+Removing them up to here -->
+
+<!--Renaming the Pause button to Carousel Button-->
+                            <button class="btn btn-danger btn-sm" id="carouselButton">
+                                <i class="fa fa-pause"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -366,7 +372,7 @@ All above is hidden as we built the modal; no longer will see the form-->
     </script>
 but we are removing this in Week 3 so we can use modal in place-->
 
-<!--Adding Jquery Script for the Play and Pause buttons on carousel-->
+<!--Adding Jquery Script for the Play and Pause buttons on carousel & replacing with the one below for the one button of carousel than 2
 <script>
     $(function() {
         $(".carousel").carousel( { interval: 2000 } );
@@ -375,6 +381,25 @@ but we are removing this in Week 3 so we can use modal in place-->
         });
         $("#carouselPlay").click(function(){
             $(".carousel").carousel("cycle");
+        });
+    });
+</script>
+Removing up to here -->
+
+<!--New script added after removal of the first play/pause. This is for the one button carousel-->
+<script>
+    $(function() {
+        $(".carousel").carousel( { interval: 2000 } );
+        $("#carouselButton").click(function(){
+            if ($("#carouselButton").children("i").hasClass("fa-pause")) {
+                $(".carousel").carousel("pause");
+                $("#carouselButton").children("i").removeClass("fa-pause");
+                $("#carouselButton").children("i").addClass("fa-play");
+            } else {
+                $(".carousel").carousel("cycle");
+                $("#carouselButton").children("i").removeClass("fa-play");
+                $("#carouselButton").children("i").addClass("fa-pause"); 
+            }
         });
     });
 </script>
