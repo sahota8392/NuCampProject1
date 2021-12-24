@@ -387,22 +387,8 @@ but we are removing this in Week 3 so we can use modal in place-->
 Removing up to here -->
 
 <!--New script added after removal of the first play/pause. This is for the one button carousel-->
-<script>
-    $(function() {
-        $(".carousel").carousel( { interval: 2000 } );
-        $("#carouselButton").click(function(){
-            if ($("#carouselButton").children("i").hasClass("fa-pause")) {
-                $(".carousel").carousel("pause");
-                $("#carouselButton").children("i").removeClass("fa-pause");
-                $("#carouselButton").children("i").addClass("fa-play");
-            } else {
-                $(".carousel").carousel("cycle");
-                $("#carouselButton").children("i").removeClass("fa-play");
-                $("#carouselButton").children("i").addClass("fa-pause"); 
-            }
-        });
-    });
-</script>
+<script src="js/scripts.js"></script>>
+
 </body>
 
 </html>
