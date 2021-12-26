@@ -5,14 +5,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width", initial-scale="1"/>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+<!--Add'l CSS must be placed after Boostrap CSS
+    Surround all CSS links code in head with build:css and endbuild comments.
+Exluding the google font as that is not a local file-->
 
-    <!--Add'l CSS must be placed after Boostrap CSS-->
-    <link rel="stylesheet" href="https://fonts.google.apis.com/css?family=Lobster|Open+Sans"/>
+<!-- build:css css/main.css -->
     <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+<!-- endbuild -->
+<link rel="stylesheet" href="https://fonts.google.apis.com/css?family=Lobster|Open+Sans"/>
+
 
     <title>NuCamp: A Better Way To Camp</title>
 </head>
@@ -360,9 +364,13 @@ All above is hidden as we built the modal; no longer will see the form-->
     </footer>
 
     <!-- JQuery must come first, then Popper.js, then the Boostrap JavaScript plugins. -->
+    <!-- build:js js/main.js -->
     <script src="node_modules/jquery/dist/jquery.slim.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!--New script added after removal of the first play/pause. This is for the one button carousel-->
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
 
     <!--Activate tooltip, 
     <script>
@@ -386,8 +394,7 @@ but we are removing this in Week 3 so we can use modal in place-->
 </script>
 Removing up to here -->
 
-<!--New script added after removal of the first play/pause. This is for the one button carousel-->
-<script src="js/scripts.js"></script>
+
 
 </body>
 
