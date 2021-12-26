@@ -9,11 +9,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "scss": "node-sass -o css/ css/",
     "watch:scss": "onchange 'css/*.scss' -- npm run scss",
-    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'"
+    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
   },
   "author": "Harpreet",
   "license": "ISC",
   "devDependencies": {
+    "copyfiles": "^2.2.0",
     "lite-server": "^2.6.1",
     "node-sass": "^4.14.1",
     "onchange": "^7.0.0",
@@ -25,5 +27,6 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1"
-  }
+  },
 }
+
